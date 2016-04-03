@@ -1,5 +1,5 @@
 <?php
-// Check for empty fields
+/*// Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
@@ -22,5 +22,30 @@ $email_body = "João, você acabou de receber uma mensagem no seu website.\n\n".
 $headers = "From: portfolio@joaovitorlessa.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";	
 mail($to,$email_subject,$email_body,$headers);
-return true;			
+return true;*/
+
+$quebra_linha = "\r\n";
+$emailsender = "teste@jvitorlb.com";
+$nomeremetente = "João Vitor";
+$emaildestinatario = "joaovitorlessa@gmail.com";
+$comcopia = "";
+$comcopiaoculta = "";
+$assunto = "Teste PHPMail";
+$mensagem = "Mensaginha";
+
+$mensagemHTML = "<p>Teste de função PHP Mail (): !</p>
+<p>Título</p>
+<p>".$mensagem."</p>
+<hr>";
+
+$headers = "MIME-Version: 1.1".$quebra_linha;
+$headers .= "Content-type: text/html; charset=iso_8859_1".$quebra_linha;
+$headers .= "From: ".$emailsender.$quebra_linha;
+$headers .= "Return-path: ".$emailsender.$quebra_linha;
+$headers .= "Cc: ".$comcopia.$quebra_linha;
+$headers .= "Bc: ".$comcopiaoculta.$quebra_linha;
+$headers .= "Reply-To: ".$emailsender.$quebra_linha;
+
+mail($emaildestinatario, $assunto, $mensagemHTML, $headers, "-r". $emailsender);
+print ("Mensagem enviada com sucesso");
 ?>
