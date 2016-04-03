@@ -28,8 +28,8 @@ $quebra_linha = "\r\n";
 $emailsender = "teste@jvitorlb.com";
 $nomeremetente = "João Vitor";
 $emaildestinatario = "joaovitorlessa@gmail.com";
-$comcopia = "";
-$comcopiaoculta = "";
+$comcopia = "joaovitorlessa@gmail.com";
+$comcopiaoculta = "joaovitorlessa@gmail.com";
 $assunto = "Teste PHPMail";
 $mensagem = "Mensaginha";
 
